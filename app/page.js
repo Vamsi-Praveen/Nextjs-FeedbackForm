@@ -2,6 +2,7 @@
 import { Star, ThumbsDown, ThumbsUp, X } from 'lucide-react';
 import React, { useState } from 'react';
 import Text from './components/Text';
+import Stars from './components/Stars';
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -36,28 +37,11 @@ const App = () => {
             <div className='my-5'>
               <div>
                 <Text heading={"Safety"} text={"How many stars given for safety measures"} />
-                <div className='flex items-center gap-3 mt-1.5'>
-                  {[1, 2, 3, 4, 5].map((el, index) => (
-                    <Star
-                      className={`${el <= safetyRating ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'} w-8 h-8 cursor-pointer`}
-                      key={index}
-                      onClick={() => handleSafetyRating(el)}
-                    />
-                  ))}
-                </div>
+                <Stars stars={safetyRating} setStars={handleSafetyRating} />
               </div>
               <div className='mt-5'>
                 <Text heading={"Communication"} text={"How many stars given for communicating with you"} />
-                <div className='flex items-center gap-3 mt-1.5'>
-                  {[1, 2, 3, 4, 5].map((el, index) => (
-                    <Star
-                      className={`${el <= communicationRating ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'
-                        } w-8 h-8 cursor-pointer`}
-                      key={index}
-                      onClick={() => handleCommunicationRating(el)}
-                    />
-                  ))}
-                </div>
+                <Stars stars={communicationRating} setStars={handleCommunicationRating} />
               </div>
               <div className='my-5'>
                 <Text heading={"Would you recommend Tarusti?"} text={"Your recommendation based on past activity"} />
