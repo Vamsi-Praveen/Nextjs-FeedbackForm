@@ -1,5 +1,5 @@
 'use client'
-import { Star, ThumbsDown, ThumbsUp, X } from 'lucide-react';
+import { ThumbsDown, ThumbsUp, X } from 'lucide-react';
 import React, { useState } from 'react';
 import Text from './components/Text';
 import Stars from './components/Stars';
